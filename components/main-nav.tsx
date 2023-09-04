@@ -1,10 +1,12 @@
 "use client"
 
+import { cn } from "@/lib/utils";
+import { Category } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 interface MainNavProps {
-    data: any
+    data: Category[];
 }
 
 const MainNav: React.FC<MainNavProps> = ({
@@ -24,6 +26,10 @@ const MainNav: React.FC<MainNavProps> = ({
                 <Link
                     key={route.href}
                     href={route.href}
+                    className={cn(
+                        "tex-sm font-medium transition-colors hover:text-black", 
+                        route.active? "text-black" : "text-neutral-500"
+                    )}
                 >
                 {route.label}
                 </Link>
