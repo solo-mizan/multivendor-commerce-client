@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Product } from "@/types";
 import Image from "next/image";
@@ -25,7 +25,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {/* Images and Actions  */}
             <div className="aspect-square rounded-xl bg-gray-100 relative">
                 <Image
-                    src={data?.images?.[0]?.url}
+                    src={data.images?.[0]?.url}
                     alt="Image"
                     fill
                     className="aspect-square object-cover rounded-md"
@@ -49,7 +49,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 <p className="text-sm text-gray-500">{data?.category?.name}</p>
             </div>
             {/* price */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-between">
                 <Currency value={data?.price} />
             </div>
         </div>
